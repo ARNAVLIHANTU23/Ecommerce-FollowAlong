@@ -77,7 +77,7 @@ Database Connection: We integrated MongoDB into the project to store and manage 
 Error Handling: Basic error-handling mechanisms were added to ensure that the server can respond with clear error messages for better debugging and user feedback.
 
 
-Milestone 7: Login Endpoint 📝
+Milestone 7: Login Endpoint 
 
 Create a login endpoint to authenticate users. Users provide their email/username and password. The backend compares the entered password (hashed with bcrypt) to the stored password. If valid, a JWT token is generated and returned for subsequent requests.
 
@@ -88,7 +88,7 @@ Test via POST /api/auth/login with email and password in the request body.
 Response: Success with a token, or error for invalid credentials.
 
 
- Milestone 8: Product Card Component 🌟
+ Milestone 8: Product Card Component 
 
 In this milestone, we focus on creating a **reusable product card component** for your e-commerce app. The goal is to showcase product details (e.g., name, image, price) in a visually appealing way, making it easy for users to browse products.
 
