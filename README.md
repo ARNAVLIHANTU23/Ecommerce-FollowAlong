@@ -1,4 +1,4 @@
-# Ecommerce-FollowAlong
+# e-commerce-application-follow-along
 
 Key Features of the Project:
 
@@ -13,6 +13,9 @@ Database Schema Design: I will explore MongoDB to design data models that are ef
 Backend Development: I will set up a server with Node.js and Express.js to handle requests, API routes, and interact with the database.
 
 Frontend with React: I will use React to build dynamic, user-friendly interfaces, like product lists and shopping carts.
+
+
+Milestone 2: 
 
 Key Achievements
 1. Project Structure:
@@ -77,7 +80,7 @@ Database Connection: We integrated MongoDB into the project to store and manage 
 Error Handling: Basic error-handling mechanisms were added to ensure that the server can respond with clear error messages for better debugging and user feedback.
 
 
-Milestone 7: Login Endpoint 
+Milestone 7: Login Endpoint 📝
 
 Create a login endpoint to authenticate users. Users provide their email/username and password. The backend compares the entered password (hashed with bcrypt) to the stored password. If valid, a JWT token is generated and returned for subsequent requests.
 
@@ -88,7 +91,7 @@ Test via POST /api/auth/login with email and password in the request body.
 Response: Success with a token, or error for invalid credentials.
 
 
- Milestone 8: Product Card Component 
+ Milestone 8: Product Card Component 🌟
 
 In this milestone, we focus on creating a **reusable product card component** for your e-commerce app. The goal is to showcase product details (e.g., name, image, price) in a visually appealing way, making it easy for users to browse products.
 
@@ -97,5 +100,14 @@ In this milestone, we focus on creating a **reusable product card component** fo
 2. **Homepage Layout**: Implemented a grid/flexbox layout to display multiple cards neatly.
 3. **Dynamic Rendering**: Used array mapping to dynamically render cards for each product.
 
-#### Next Steps:
-In the next milestone, we’ll add features like filtering and sorting. Keep up the great work! 
+Milestone 9: Product Input Form 🌟
+
+In this milestone, we focused on creating a frontend form for adding products to your e-commerce app. This form allows users to input detailed information about products, including multiple images, which will eventually be saved to a database and displayed on the product homepage.
+
+Steps Completed:
+
+1. Product Form: Built a form to input details like product name, description, price, category, and quantity.
+
+2. Multiple Image Input: Added functionality for users to upload multiple images for each product.
+
+3. Dynamic Data: Set up the form to eventually save the product data and display it dynamically on the product homepage.
