@@ -4,6 +4,7 @@ import styles from "../../styles/styles";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import axios from "axios";
+import ValidationFormObject from "../../validation"
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -11,6 +12,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
   const [avatar, setAvatar] = useState(null);
+  const [errors, setErrors] = useState({});
 
   const handleFileSubmit = (e) => {
     const file = e.target.files[0];
@@ -20,10 +22,22 @@ const Signup = () => {
       setAvatar(file);
     }
   };
-
+  const validateFields = () => {
+    const nameError = ValidationFormObject.validteName(name);
+    const emailError = ValidationFormObject.validteEmail(email);
+    const passwordError = ValidationFormObject.validtePass(password);
+    const newErrors = {};
+    if (nameError !== true) newErrors.name = nameError;
+    if (emailError !== true) newErrors.email = emailError;
+    if (passwordError !== true) newErrors.password = passwordError;
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; // Return true if no errors
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    if (!validateFields()) {
+      return; // Stop submission if validation fails
+    }
     const newForm = new FormData();
     newForm.append("file", avatar);
     newForm.append("name", name);
@@ -39,10 +53,12 @@ const Signup = () => {
     axios
       .post("http://localhost:3000/api/v2/user/create-user", newForm, config)
       .then((res) => {
-        console.log(res.data);
+        alert("User created successfully!"); // Success message from server
+        console.log(res.data); // Success response from server
       })
       .catch((err) => {
-        console.log(err);
+        alert(err.response ? err.response.data.message : err.message); // Error message from server
+        console.error(err.response ? err.response.data : err.message); // Error handling
       });
   };
 
@@ -64,15 +80,19 @@ const Signup = () => {
                 Full Name
               </label>
               <div className="mt-1">
-                <input
+              <input
                   type="text"
                   name="name"
                   autoComplete="name"
-                  required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className={`appearance-none block w-full px-3 py-2 border ${
+                    errors.name ? "border-red-500" : "border-gray-300"
+                  } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                )}
               </div>
             </div>
 
@@ -84,15 +104,19 @@ const Signup = () => {
                 Email address
               </label>
               <div className="mt-1">
-                <input
+              <input
                   type="email"
                   name="email"
                   autoComplete="email"
-                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className={`appearance-none block w-full px-3 py-2 border ${
+                    errors.email ? "border-red-500" : "border-gray-300"
+                  } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                )}
               </div>
             </div>
             <div>
@@ -103,14 +127,15 @@ const Signup = () => {
                 Password
               </label>
               <div className="mt-1 relative">
-                <input
+              <input
                   type={visible ? "text" : "password"}
                   name="password"
                   autoComplete="current-password"
-                  required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className={`appearance-none block w-full px-3 py-2 border ${
+                    errors.password ? "border-red-500" : "border-gray-300"
+                  } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                 />
                 {visible ? (
                   <AiOutlineEye

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Product from "../component/auth/myproduct";
+import { useEffect, useState } from "react";
 import NavBar from "../component/auth/nav";
+import Product from "../component/auth/Product";
 
 export default function Home() {
 const [products, setProducts] = useState([]);
