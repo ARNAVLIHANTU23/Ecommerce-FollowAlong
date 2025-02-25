@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import CartProduct from "../Components/auth/CartProduct";
-import NavBar from '../Components/auth/nav';
- 
-import { useState, useEffect } from 'react';
-const Cart = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch(`http://localhost:8000/api/v2/product/cartproducts?email=${'arnavlihantu@gmail.com'}`)
-=======
 import CartProduct from '../component/auth/CartProduct';
 import NavBar from '../component/auth/nav';
  
@@ -18,8 +8,7 @@ const Cart = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/api/v2/product/cartproducts?email=${'ksi@gamil.com'}`)
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
+        fetch(`http://localhost:8000/api/v2/product/cartproducts?email=${'ksi@gamil.com'}`)
           .then((res) => {
             if (!res.ok) {
               throw new Error(`HTTP error! status: ${res.status}`);
@@ -37,18 +26,6 @@ const Cart = () => {
     
       console.log("Products:", products);
 
-<<<<<<< HEAD
-      return (
-        <div className="w-full h-screen">
-            <NavBar/>
-            <div className="w-full h-full justify-center items-center flex">
-                <div className="w-full h-16 flex items-center justify-center">
-                    <h1 className="text-2xl font-semibold">Cart</h1>
-                    <div className="w-full flex-grow overflow-auto px-3 py-2 gap-y-2">
-                        {
-                            products.map(product => (
-                                <CartProduct key={product.id} {...product} />
-=======
     return (
         <div className='w-full h-screen'>
             <NavBar />
@@ -61,20 +38,12 @@ const Cart = () => {
                         {
                             products.map(product => (
                                 <CartProduct key={product._id} {...product} />
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
                             ))
                         }
                     </div>
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-      );
-    }
-
-    export default Cart;
-=======
     );
 }
 export default Cart;
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e

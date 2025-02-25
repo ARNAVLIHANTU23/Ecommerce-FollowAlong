@@ -22,11 +22,7 @@ function Product({ _id, name, images, description, price }) {
     const handleDelete = async () => {
         try {
             const response = await axios.delete(
-<<<<<<< HEAD:frontend/src/Components/auth/myproduct.jsx
                 `http://localhost:8000/api/v2/product/delete-product/${_id}`
-=======
-                `http://localhost:3000/api/v2/product/delete-product/${_id}`
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e:frontend/src/component/auth/myproduct.jsx
             );
             if (response.status === 200) {
                 alert("Product deleted successfully!");
@@ -44,11 +40,7 @@ function Product({ _id, name, images, description, price }) {
             <div className="w-full">
                 {currentImage && (
                     <img
-<<<<<<< HEAD:frontend/src/Components/auth/myproduct.jsx
                         src={`http://localhost:8000${currentImage}`}
-=======
-                        src={`http://localhost:3000${currentImage}`}
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e:frontend/src/component/auth/myproduct.jsx
                         alt={name}
                         className="w-full h-56 object-cover rounded-lg mb-2"
                     />

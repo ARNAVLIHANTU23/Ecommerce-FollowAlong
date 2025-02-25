@@ -5,7 +5,6 @@ const User = require("../model/user");
 const router = express.Router();
 const { upload } = require("../multer");
 const ErrorHandler = require("../utils/ErrorHandler");
-<<<<<<< HEAD
 const catchAsyncErrors = require("../middleware/catchAsynError");
 // const jwt = require("jsonwebtoken");
 // const sendMail = require("../utils/sendMail");
@@ -76,8 +75,7 @@ router.post(
     });
 }));
 
-=======
-const catchAsyncErrors = require("../middleware/catchAsyncErrors");
+const catchAsyncError = require("../middleware/catchAsynError");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
@@ -127,10 +125,6 @@ router.post(
     if (!email || !password) {
       return next(new ErrorHandler("Please provide email and password", 400));
     }
-    const user = await User.findOne({ email }).select("+password");
-    if (!user) {
-      return next(new ErrorHandler("Invalid Email or Password", 401));
-    }
     const isPasswordMatched = await bcrypt.compare(password, user.password);
     console.log("At Auth", "Password: ", password, "Hash: ", user.password);
     if (!isPasswordMatched) {
@@ -167,7 +161,6 @@ router.get(
     });
   })
 );
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
 
 router.get("/profile", catchAsyncErrors(async (req, res, next) => {
   const { email } = req.query;
@@ -189,8 +182,5 @@ router.get("/profile", catchAsyncErrors(async (req, res, next) => {
       addresses: user.addresses,
   });
 }));
-<<<<<<< HEAD
-=======
 
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
 module.exports = router;

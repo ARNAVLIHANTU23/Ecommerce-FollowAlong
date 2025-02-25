@@ -22,21 +22,13 @@ export default function CartProduct({ _id, name, images, quantity, price }) {
         updateQuantityVal(newquantityVal);
 	};
     const updateQuantityVal = (quantity) => {
-<<<<<<< HEAD:frontend/src/Components/auth/CartProduct.jsx
         fetch('http://localhost:8000/api/v2/product/cartproduct/quantity', {
-=======
-        fetch('http://localhost:3000/api/v2/product/cartproduct/quantity', {
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e:frontend/src/component/auth/CartProduct.jsx
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-<<<<<<< HEAD:frontend/src/Components/auth/CartProduct.jsx
-                email: 'parthsarawgi18@gmail.com',
-=======
-                email: 'ksi@gamil.com',
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e:frontend/src/component/auth/CartProduct.jsx
+                email: 'arnavlihantu@gamil.com',
                 productId: _id,
                 quantity,
             }),
@@ -54,21 +46,13 @@ export default function CartProduct({ _id, name, images, quantity, price }) {
                 console.error('Error updating quantityVal:', err);
             });
     };
-<<<<<<< HEAD:frontend/src/Components/auth/CartProduct.jsx
-=======
-
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e:frontend/src/component/auth/CartProduct.jsx
 	const currentImage = images && images.length > 0 ? images[currentIndex] : null;
 	
 	return (
 		<div className="h-max w-full p-4 flex justify-between border-b border-neutral-300 bg-neutral-100 rounded-lg">
 			<div className="flex flex-col gap-y-2">
 				<img
-<<<<<<< HEAD:frontend/src/Components/auth/CartProduct.jsx
 					src={`http://localhost:8000${currentImage}`} // Ensure the URL is correct\
-=======
-					src={`http://localhost:3000${currentImage}`} // Ensure the URL is correct\
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e:frontend/src/component/auth/CartProduct.jsx
 					alt={name}
 					className="w-32 h-32 object-cover rounded-lg border border-neutral-300"
 				/>

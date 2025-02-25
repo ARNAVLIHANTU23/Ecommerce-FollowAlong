@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../Components/auth/nav"
-=======
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import NavBar from "../component/auth/nav";
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
 import { IoIosAdd } from "react-icons/io";
 import { IoIosRemove } from "react-icons/io";
 
@@ -18,20 +11,12 @@ export default function ProductDetails() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1); // 1. Initialize quantity state
-<<<<<<< HEAD
   const email = "arnavlihantu@gmail.com";
-=======
-  const email = "ksi@gamil.com";
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-<<<<<<< HEAD
           `http://localhost:8000/api/v2/product/product/${id}`
-=======
-          `http://localhost:3000/api/v2/product/product/${id}`
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
         );
         console.log("Fetched product:", response.data.product);
         setProduct(response.data.product); // Ensure correct state setting
@@ -62,11 +47,7 @@ export default function ProductDetails() {
   const addtocart = async () => {
     try {
       const response = await axios.post(
-<<<<<<< HEAD
         "http://localhost:8000/api/v2/product/cart",
-=======
-        "http://localhost:3000/api/v2/product/cart",
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
         {
           userId: email,
           productId: id,
@@ -109,11 +90,7 @@ export default function ProductDetails() {
             <div className="w-full bsm:w-2/3 md:w-1/3 rounded-lg">
               {product.images && product.images.length > 0 ? (
                 <img
-<<<<<<< HEAD
                   src={`http://localhost:8000${product.images[0]}`}
-=======
-                  src={`http://localhost:3000${product.images[0]}`}
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
                   alt={product.name}
                   className="w-full h-full object-contain bsm:object-cover"
                   style={{ maxHeight: "500px" }} // Adjust the max height as needed
@@ -206,8 +183,4 @@ export default function ProductDetails() {
       </div>
     </>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
