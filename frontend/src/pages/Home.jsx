@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
 import Product from "../Components/auth/Product";
 import NavBar from "../Components/auth/nav";
+=======
+import NavBar from "../component/auth/nav";
+import Product from "../component/auth/Product";
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
 
 export default function Home() {
 const [products, setProducts] = useState([]);
@@ -8,7 +13,11 @@ const [loading, setLoading] = useState(true); // For loading state
 const [error, setError] = useState(null); // For error handling
 
 useEffect(() => {
+<<<<<<< HEAD
   fetch("http://localhost:8000/api/v2/product/get-products")
+=======
+  fetch("http://localhost:3000/api/v2/product/get-products")
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);

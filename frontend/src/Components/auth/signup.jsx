@@ -3,7 +3,12 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import axios from "axios";
+<<<<<<< HEAD:frontend/src/Components/auth/signup.jsx
 import ValidationFormObject from "../../validation";
+=======
+import ValidationFormObject from "../../validation"
+
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e:frontend/src/component/auth/Signup.jsx
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -11,6 +16,10 @@ const Signup = () => {
   const [visible, setVisible] = useState(false);
   const [avatar, setAvatar] = useState(null);
   const [errors, setErrors] = useState({});
+<<<<<<< HEAD:frontend/src/Components/auth/signup.jsx
+=======
+
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e:frontend/src/component/auth/Signup.jsx
   const handleFileSubmit = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -46,6 +55,7 @@ const Signup = () => {
         "Accept": "any",
       },
     };
+<<<<<<< HEAD:frontend/src/Components/auth/signup.jsx
  // Axios request to backend
  axios
  .post("http://localhost:8000/api/v2/user/create-user", newForm, config)
@@ -57,6 +67,21 @@ const Signup = () => {
    console.error(err.response ? err.response.data : err.message); // Error handling
  });
 };
+=======
+
+    axios
+      .post("http://localhost:3000/api/v2/user/create-user", newForm, config)
+      .then((res) => {
+        alert("User created successfully!"); // Success message from server
+        console.log(res.data); // Success response from server
+      })
+      .catch((err) => {
+        alert(err.response ? err.response.data.message : err.message); // Error message from server
+        console.error(err.response ? err.response.data : err.message); // Error handling
+      });
+  };
+
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e:frontend/src/component/auth/Signup.jsx
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -75,7 +100,7 @@ const Signup = () => {
                 Full Name
               </label>
               <div className="mt-1">
-                <input
+              <input
                   type="text"
                   name="name"
                   autoComplete="name"
@@ -98,7 +123,7 @@ const Signup = () => {
                 Email address
               </label>
               <div className="mt-1">
-                <input
+              <input
                   type="email"
                   name="email"
                   autoComplete="email"
@@ -121,7 +146,7 @@ const Signup = () => {
                 Password
               </label>
               <div className="mt-1 relative">
-                <input
+              <input
                   type={visible ? "text" : "password"}
                   name="password"
                   autoComplete="current-password"

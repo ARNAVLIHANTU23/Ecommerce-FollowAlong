@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 import AddressCard from "../Components/auth/AddressCard";
 import NavBar from "../Components/auth/nav";
+=======
+import AddressCard from "../Component/auth/AddressCard";
+import NavBar from "../component/auth/nav";
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
 export default function Profile() {
 	const [personalDetails, setPersonalDetails] = useState({
 		name: "",
@@ -10,10 +15,16 @@ export default function Profile() {
 		avatarUrl: "",
 	});
 	const [addresses, setAddresses] = useState([]);
+<<<<<<< HEAD
 	const navigate = useNavigate();
 	useEffect(() => {
 		fetch(
 			`http://localhost:8000/api/v2/user/profile?email=${"arnavlihantu@gmail.com"}`,
+=======
+	useEffect(() => {
+		fetch(
+			`http://localhost:3000/api/v2/user/profile?email=${"ksi@gamil.com"}`,
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
 			{
 				method: "GET",
 				headers: {
@@ -34,9 +45,12 @@ export default function Profile() {
 				console.log("Addresses fetched:", data.addresses);
 			});
 	}, []);
+<<<<<<< HEAD
 	const handleAddAddress = () => {
 		navigate("/create-address");
 	};
+=======
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
 	return (
 		<>
 			<NavBar />
@@ -54,7 +68,11 @@ export default function Profile() {
 									PICTURE
 								</div>
 								<img
+<<<<<<< HEAD
 									src={personalDetails.avatarUrl ? `http://localhost:8000/${personalDetails.avatarUrl}` : `https://cdn.vectorstock.com/i/500p/17/61/male-avatar-profile-picture-vector-10211761.jpg`}
+=======
+									src={personalDetails.avatarUrl ? `http://localhost:3000/${personalDetails.avatarUrl}` : `https://cdn.vectorstock.com/i/500p/17/61/male-avatar-profile-picture-vector-10211761.jpg`}
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
 									alt="profile"
 									className="w-40 h-40 rounded-full"
 									onError={(e) => {
@@ -100,7 +118,11 @@ export default function Profile() {
 							</h1>
 						</div>
 						<div className="w-full h-max p-5">
+<<<<<<< HEAD
 							<button className="w-max px-3 py-2 bg-neutral-600 text-neutral-100 rounded-md text-center hover:bg-neutral-100 hover:text-black transition-all duration-100" onClick={handleAddAddress}>
+=======
+							<button className="w-max px-3 py-2 bg-neutral-600 text-neutral-100 rounded-md text-center hover:bg-neutral-100 hover:text-black transition-all duration-100">
+>>>>>>> 5d43ec0be4a0bade14628e22b59065f6de8e3c7e
 								Add Address
 							</button>
 						</div>
