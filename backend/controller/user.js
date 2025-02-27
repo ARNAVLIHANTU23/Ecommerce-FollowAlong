@@ -120,4 +120,70 @@ router.post("/add-address", catchAsyncErrors(async (req, res, next) => {
   });
 }));
 
+router.post(
+  "/login",
+  catchAsyncErrors(async (req, res, next) => {
+    console.log("Logging in user...");
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return next(new ErrorHandler("Please provide email and password", 400));
+    }
+    const isPasswordMatched = await bcrypt.compare(password, user.password);
+    console.log("At Auth", "Password: ", password, "Hash: ", user.password);
+    if (!isPasswordMatched) {
+      return next(new ErrorHandler("Invalid Email or Password", 401));
+    }
+    user.password = undefined;
+    res.status(200).json({
+      success: true,
+      user,
+    });
+  })
+);
+
+router.get(
+  "/profile",
+  catchAsyncErrors(async (req, res, next) => {
+    const { email } = req.query;
+    if (!email) {
+      return next(new ErrorHandler("Please provide an email", 400));
+    }
+    const user = await User.findOne({ email });
+    if (!user) {
+      return next(new ErrorHandler("User not found", 404));
+    }
+    res.status(200).json({
+      success: true,
+      user: {
+        name: user.name,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        avatarUrl: user.avatar.url,
+      },
+      addresses: user.addresses,
+    });
+  })
+);
+
+router.get("/profile", catchAsyncErrors(async (req, res, next) => {
+  const { email } = req.query;
+  if (!email) {
+      return next(new ErrorHandler("Please provide an email", 400));
+  }
+  const user = await User.findOne({ email });
+  if (!user) {
+      return next(new ErrorHandler("User not found", 404));
+  }
+  res.status(200).json({
+      success: true,
+      user: {
+          name: user.name,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          avatarUrl: user.avatar.url
+      },
+      addresses: user.addresses,
+  });
+}));
+
 module.exports = router;

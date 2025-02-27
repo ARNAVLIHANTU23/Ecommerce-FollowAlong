@@ -75,7 +75,7 @@ const Signup = () => {
                 Full Name
               </label>
               <div className="mt-1">
-                <input
+              <input
                   type="text"
                   name="name"
                   autoComplete="name"
@@ -98,7 +98,7 @@ const Signup = () => {
                 Email address
               </label>
               <div className="mt-1">
-                <input
+              <input
                   type="email"
                   name="email"
                   autoComplete="email"
@@ -121,7 +121,7 @@ const Signup = () => {
                 Password
               </label>
               <div className="mt-1 relative">
-                <input
+              <input
                   type={visible ? "text" : "password"}
                   name="password"
                   autoComplete="current-password"

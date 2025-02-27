@@ -1,11 +1,13 @@
-import Login from "../components/auth/Login"
+import Login from "../Components/auth/Login";
 
-function LoginPage() {
+
+function LoginPage(){
   return (
     <div>
-      <Login />
+      <Login/>
     </div>
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;
+

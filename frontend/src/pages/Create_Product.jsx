@@ -1,11 +1,14 @@
-import CartProduct from "../Components/auth/CartProduct";
-import NavBar from '../Components/auth/nav';
+import CartProduct from '../component/auth/CartProduct';
+import NavBar from '../component/auth/nav';
  
 import { useState, useEffect } from 'react';
+
 const Cart = () => {
+
     const [products, setProducts] = useState([]);
+
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v2/product/cartproducts?email=${'arnavlihantu@gmail.com'}`)
+        fetch(`http://localhost:8000/api/v2/product/cartproducts?email=${'arnavlihantu@gamil.com'}`)
           .then((res) => {
             if (!res.ok) {
               throw new Error(`HTTP error! status: ${res.status}`);
@@ -35,16 +38,12 @@ const Cart = () => {
                         {
                             products.map(product => (
                                 <CartProduct key={product._id} {...product} />
-
                             ))
                         }
                     </div>
                 </div>
             </div>
         </div>
-
-      );
- 
+    );
 }
 export default Cart;
-

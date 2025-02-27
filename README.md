@@ -1,4 +1,4 @@
-# e-commerce-application-follow-along
+e-commerce-application-follow-along
 
 Key Features of the Project:
 
@@ -18,18 +18,12 @@ Frontend with React: I will use React to build dynamic, user-friendly interfaces
 ## Milestone 2: 
 
 Key Achievements
-1. Project Structure:
-Organized the project into frontend and backend directories for better maintainability.
-Backend set up with Node.js to handle server-side logic, and the frontend set up with React to build the user interface.
-2. React Frontend Setup:
-Initialized a React app to manage the UI, allowing the e-commerce platform to be interactive.
-3. Node.js Backend Setup:
-Configured a basic Node.js server to lay the foundation for upcoming API integrations and user authentication.
-4. Tailwind CSS Configuration:
-Integrated Tailwind CSS for utility-first, responsive styling to enhance UI development speed.
-5. Login Page Development:
-Designed and built a functional Login Page with form validation and styling using Tailwind.
 
+    Project Structure: Organized the project into frontend and backend directories for better maintainability. Backend set up with Node.js to handle server-side logic, and the frontend set up with React to build the user interface.
+    React Frontend Setup: Initialized a React app to manage the UI, allowing the e-commerce platform to be interactive.
+    Node.js Backend Setup: Configured a basic Node.js server to lay the foundation for upcoming API integrations and user authentication.
+    Tailwind CSS Configuration: Integrated Tailwind CSS for utility-first, responsive styling to enhance UI development speed.
+    Login Page Development: Designed and built a functional Login Page with form validation and styling using Tailwind.
 
 ## Milestone 3: 
 
@@ -89,6 +83,7 @@ Dependencies: bcryptjs, jsonwebtoken.
 Test via POST /api/auth/login with email and password in the request body.
 
 Response: Success with a token, or error for invalid credentials.
+Milestone 8: Product Card Component 🌟
 
 
  ## Milestone 8: Product Card Component 🌟
