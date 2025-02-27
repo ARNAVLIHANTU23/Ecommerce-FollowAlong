@@ -15,7 +15,7 @@ Backend Development: I will set up a server with Node.js and Express.js to handl
 Frontend with React: I will use React to build dynamic, user-friendly interfaces, like product lists and shopping carts.
 
 
-Milestone 2: 
+## Milestone 2: 
 
 Key Achievements
 1. Project Structure:
@@ -31,7 +31,7 @@ Integrated Tailwind CSS for utility-first, responsive styling to enhance UI deve
 Designed and built a functional Login Page with form validation and styling using Tailwind.
 
 
-Milestone 3: 
+## Milestone 3: 
 
 In this milestone, we focused on building the foundation for the backend of our e-commerce application. The key objectives were to set up a server, connect it to a database, and establish a solid folder structure to keep our code organized.
 
@@ -44,7 +44,7 @@ Database Connection: We integrated MongoDB into the project to store and manage 
 Error Handling: Basic error-handling mechanisms were added to ensure that the server can respond with clear error messages for better debugging and user feedback.
 
 
-Milestone 4: 
+## Milestone 4: 
 
 In Milestone 4, we focused on enhancing the backend by creating a User Model, setting up a User Controller, and enabling file uploads using Multer. These features are key to handling user data and media effectively in the e-commerce app.
 
@@ -55,7 +55,7 @@ User Controller: The User Controller was developed to manage user-related reques
 File Uploads with Multer: We integrated Multer to enable file uploads, allowing users to upload images (e.g., profile pictures). Multer manages the file storage and ensures that the files are saved securely in the backend.
 
 
-Milestone 5: 
+## Milestone 5: 
 
 In Milestone 5, we focused on building the Sign-Up Page for the frontend, where users can register by entering their details. This page includes essential fields such as name, email, and password, providing a clean and user-friendly interface for registration.
 
@@ -67,7 +67,7 @@ UI/UX Enhancements: The design is simple yet effective, allowing users to smooth
 
 
 
-Milestone 6: 
+## Milestone 6: 
 
 In this milestone, we focused on building the foundation for the backend of our e-commerce application. The key objectives were to set up a server, connect it to a database, and establish a solid folder structure to keep our code organized.
 
@@ -80,7 +80,7 @@ Database Connection: We integrated MongoDB into the project to store and manage 
 Error Handling: Basic error-handling mechanisms were added to ensure that the server can respond with clear error messages for better debugging and user feedback.
 
 
-Milestone 7: Login Endpoint 📝
+## Milestone 7: Login Endpoint 📝
 
 Create a login endpoint to authenticate users. Users provide their email/username and password. The backend compares the entered password (hashed with bcrypt) to the stored password. If valid, a JWT token is generated and returned for subsequent requests.
 
@@ -91,7 +91,7 @@ Test via POST /api/auth/login with email and password in the request body.
 Response: Success with a token, or error for invalid credentials.
 
 
- Milestone 8: Product Card Component 🌟
+ ## Milestone 8: Product Card Component 🌟
 
 In this milestone, we focus on creating a **reusable product card component** for your e-commerce app. The goal is to showcase product details (e.g., name, image, price) in a visually appealing way, making it easy for users to browse products.
 
@@ -100,14 +100,90 @@ In this milestone, we focus on creating a **reusable product card component** fo
 2. **Homepage Layout**: Implemented a grid/flexbox layout to display multiple cards neatly.
 3. **Dynamic Rendering**: Used array mapping to dynamically render cards for each product.
 
-Milestone 9: Product Input Form 🌟
+#### Next Steps:
+In the next milestone, we’ll add features like filtering and sorting. Keep up the great work! 🚀
 
-In this milestone, we focused on creating a frontend form for adding products to your e-commerce app. This form allows users to input detailed information about products, including multiple images, which will eventually be saved to a database and displayed on the product homepage.
+### Submission:
+- Push your code to GitHub and ensure the repository is public.
+- Update README with your progress and share the link.
 
-Steps Completed:
+# Milestone 9: Product Form Creation
 
-1. Product Form: Built a form to input details like product name, description, price, category, and quantity.
+In this milestone, I created a frontend form for inputting product details, including multiple images. This form captures essential product information such as title, description, price, and image files, and will eventually be saved to the database. This milestone helps to understand how to handle user inputs and manage media files in a web application. Additional features like admin access for product uploads were also explored.
 
-2. Multiple Image Input: Added functionality for users to upload multiple images for each product.
+# Milestone 10: Product Schema & Endpoint Creation
 
-3. Dynamic Data: Set up the form to eventually save the product data and display it dynamically on the product homepage.
+In this milestone, I created a Mongoose schema to define the structure for storing product data in MongoDB. The schema includes fields like name, description, price, and image URL, with proper validation to ensure data integrity (e.g., required fields, correct data types). 
+
+I also built a POST endpoint that receives product details, validates the input data, and stores it in the database. This ensures that only valid product information is saved, maintaining a clean and reliable database.
+
+Additionally, I explored optional features like creating admin roles for restricted access to product uploads. This milestone strengthens the backend process of handling product data, making it ready for display on the frontend in future milestones.
+
+## Milestone 11
+
+Welcome to Milestone 11! 🌟
+
+In this milestone, we learned how to display products dynamically on the home page using data stored in MongoDB. We built an endpoint to fetch all the products and a frontend function to display them using a product card component.
+
+# Milestone 12 - My Products Page
+
+Welcome to Milestone 12! 🌟
+
+In this milestone, we will build a "My Products" page that will display all the products added by a specific user. We will write an endpoint to filter products based on the user's email and send that data to the frontend. The data will be fetched dynamically and displayed using the Product Card component created earlier.
+
+# Milestone 13 - Updating the product
+
+This Express.js route updates a product in a MongoDB database, handling file uploads using multer. It validates input data, updates product details (name, description, category, tags, price, stock, email), and modifies images if new ones are uploaded. Errors are handled with appropriate status codes, ensuring robust error management and smooth database updates.
+
+# Milestone 14 - Delete the product
+
+This e-commerce application is built with Node.js, Express, MongoDB, and React, providing full-stack functionality for product management. It includes RESTful APIs for adding, updating, and deleting products. The /delete-product/:id endpoint allows secure product removal. Error handling ensures reliability. Ideal for scalable and dynamic online stores. 
+
+
+# Milestone 15
+
+In this milestone, we created a navigation bar on the homepage where we can see "My Products," "Add Product," and "Cart."
+
+# Milestone 16
+
+In this milestone, we updated our product detail file so that we can access more information about our product.
+
+
+# Milestone 17: Cart Functionality
+
+Overview:-
+
+This milestone involves adding a cart feature to the user schema and implementing an endpoint to store product details in the cart.
+
+Changes Made:
+
+Cart Schema:
+
+Added a Cart schema to store products associated with the user.
+Each product contains a productId (referencing the Product model) and quantity.
+Endpoint for Adding Products to Cart:
+
+Created a POST endpoint /api/cart/add to receive product details (e.g., product ID and quantity).
+The product details are stored in the cart associated with the user in the database.
+
+# Milestone 18: Cart Functionality Update
+Overview:-
+
+In this milestone, we have added two key backend endpoints to handle cart functionalities:
+
+1. Adding products to the cart via a POST request.
+2. Fetching all products inside a user's cart using their email.
+
+# Milestone 19 - Cart Page & Quantity Control
+
+Welcome to *Milestone 19* of our project! 🎉 In this milestone, we focused on creating the frontend for the cart page, allowing users to view products and manage quantities directly within the cart. Additionally, we developed backend endpoints to handle increasing and decreasing product quantities.
+
+
+# Milestone 20 - Profile Page & User Data Display
+
+Welcome to *Milestone 20* of our project! 🌟 In this milestone, we focused on creating a user profile page where we can display all the user data fetched from the backend. Additionally, we developed an API endpoint to send user data, which includes details like name, profile photo, email, and addresses.
+
+
+# Milestone 21 : Adding Address colum to the profile page
+
+In this milestone we create a "createAddress.jsx" file in pages folder where we write the code for add address button to make it functional and will send us to the add address page.

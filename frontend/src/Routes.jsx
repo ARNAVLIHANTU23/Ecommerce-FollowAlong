@@ -1,5 +1,10 @@
-import LoginPage from "./pages/Login";
-import SignupPage from "./pages/Signup";
-import Home from "./pages/Home";
-import CreateProduct from "./pages/Product.jsx";
-export {LoginPage, SignupPage, Home, CreateProduct};
+import LoginPage from "./pages/Login.jsx";
+import SignupPage from "./pages/Signup.jsx";
+import Home from "./pages/Home.jsx";
+import CreateProduct from './pages/createProduct.jsx';
+import MyProducts from "./pages/myProducts.jsx";
+import Cart from "./pages/cart.jsx";
+import ProductDetails from "./pages/productDetails.jsx";
+import Profile from "./pages/profile.jsx";  
+import CreateAddress from "./pages/createAddress.jsx";
+export {LoginPage,SignupPage,Home,CreateProduct, MyProducts, Cart, ProductDetails, Profile, CreateAddress};
