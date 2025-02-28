@@ -50,10 +50,11 @@ const Signup = () => {
  axios
  .post("http://localhost:8000/api/v2/user/create-user", newForm, config)
  .then((res) => {
-   alert("User created successfully!");
+   alert("User created successfully!"); // Success message from server
    console.log(res.data); // Success response from server
  })
  .catch((err) => {
+   alert(err.response ? err.response.data.message : err.message); // Error message from server
    console.error(err.response ? err.response.data : err.message); // Error handling
  });
 };
@@ -75,7 +76,7 @@ const Signup = () => {
                 Full Name
               </label>
               <div className="mt-1">
-              <input
+                <input
                   type="text"
                   name="name"
                   autoComplete="name"
@@ -98,7 +99,7 @@ const Signup = () => {
                 Email address
               </label>
               <div className="mt-1">
-              <input
+                <input
                   type="email"
                   name="email"
                   autoComplete="email"
@@ -121,7 +122,7 @@ const Signup = () => {
                 Password
               </label>
               <div className="mt-1 relative">
-              <input
+                <input
                   type={visible ? "text" : "password"}
                   name="password"
                   autoComplete="current-password"
