@@ -38,6 +38,7 @@ const productSchema = new mongoose.Schema(
       type: Date,
       default: Date.now, // Automatically set the creation date
     },
+    
   },
   {
     timestamps: true,

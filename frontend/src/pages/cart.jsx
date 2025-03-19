@@ -1,31 +1,31 @@
-// Cart.jsx
+//Cart.jsx
 import React, { useState, useEffect } from 'react';
-import CartProduct from '../components/auth/CartProduct';
-import NavBar from '../components/auth/nav';
+import CartProduct from "../Components/auth/CartProduct";
+import NavBar from '../Components/auth/nav';
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
 const Cart = () => {
 
-  const [products, setProducts] = useState([]);
-  const navigate = useNavigate(); // Initialize navigate
+    const [products, setProducts] = useState([]);
+    const navigate = useNavigate(); // Initialize navigate
 
-  useEffect(() => {
-    fetch(`http://localhost:8000/api/v2/product/cartproducts?email=${'ksi@gamil.com'}`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setProducts(data.cart.map(product => ({ quantity: product['quantity'], ...product['productId'] })));
-        console.log("Products fetched:", data.cart);
-      })
-      .catch((err) => {
-        console.error("Error fetching products:", err);
-      });
-  }, []);
-    
+    useEffect(() => {
+      fetch(`http://localhost:8000/api/v2/product/cartproducts?email=${'arnavlihantu@gmail.com'}`)
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+          }
+          return res.json();
+        })
+        .then((data) => {
+          setProducts(data.cart.map(product => ({ quantity: product['quantity'], ...product['productId'] })));
+          console.log("Products fetched:", data.cart);
+        })
+        .catch((err) => {
+          console.error("Error fetching products:", err);
+        });
+    }, []);
+  
       console.log("Products:", products);
 
       const handlePlaceOrder = () => {
@@ -33,8 +33,8 @@ const Cart = () => {
       };
 
       return (
-        <div className='w-full h-screen'>
-          <NavBar />
+        <div className="w-full h-screen">
+           <NavBar />
           <div className='w-full h-full justify-center items-center flex'>
             <div className='w-full md:w-4/5 lg:w-4/6 2xl:w-2/3 h-full border-l border-r border-neutral-300 flex flex-col'>
               <div className='w-full h-16 flex items-center justify-center'>
@@ -55,9 +55,9 @@ const Cart = () => {
                 </button>
               </div>
             </div>
-            </div>
-    </div>
-  );
-}
+        </div>
+        </div>
+      );
+    }
 
-export default Cart;
+    export default Cart;

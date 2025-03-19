@@ -1,6 +1,6 @@
 // SelectAddress.jsx
 import React, { useState, useEffect } from 'react';
-import NavBar from '../components/auth/nav'; // Ensure the path is correct and component name matches
+import NavBar from '../Components/auth/nav'; // Ensure the path is correct and component name matches
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 // Optionally, if you have a context or a way to get the authenticated user's email, import it
@@ -12,7 +12,7 @@ const SelectAddress = () => {
     const navigate = useNavigate();
     // Optionally, get the authenticated user's email from context or props
     // const { user } = useAuth();
-    const userEmail = 'ksi@gamil.com'; // Replace with dynamic email in production
+    const userEmail = 'arnavlihantu@gmail.com'; // Replace with dynamic email in production
     useEffect(() => {
         const fetchAddresses = async () => {
             try {

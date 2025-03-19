@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import NavBar from "../components/auth/nav";
+import NavBar from "../Components/auth/nav";
 const CreateAddress = () => {
     const navigate = useNavigate();
     const [country, setCountry] = useState("");
@@ -19,8 +19,9 @@ const CreateAddress = () => {
             address2,
             zipCode,
             addressType,
-            email: "ksi@gamil.com"
+            email: "arnavlihantu@gamil.com"
         };
+        
         try {
             const response = await axios.post(
                 "http://localhost:8000/api/v2/user/add-address",
